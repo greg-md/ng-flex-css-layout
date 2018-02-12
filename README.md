@@ -76,16 +76,16 @@ export class AppModule { }
 ## Using in views
 
 ```angular2html
-<div fcLayout="column" class="zero">
-  <div fcFlex="33" class="one"></div>
+<div fcLayout="column">
+  <div fcFlex="33">One</div>
 
-  <div fcFlex="33%" [fcLayout]="direction" class="two">
-    <div fcFlex="22%"    class="two_one"></div>
-    <div fcFlex="205px"  class="two_two"></div>
-    <div fcFlex="30"     class="two_three"></div>
+  <div fcFlex="33%" [fcLayout]="direction">
+    <div fcFlex="22%">Two One</div>
+    <div fcFlex="205px">Two Two</div>
+    <div fcFlex="30">Two Three</div>
   </div>
 
-  <div fcFlex class="three"></div>
+  <div fcFlex>Three</div>
 </div>
 ```
 
