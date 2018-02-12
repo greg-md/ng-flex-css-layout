@@ -17,7 +17,7 @@ import { FlexCssModule }  from '@greg-md/ng-flex-css-layout';
       <div fcFlex="33%" [fcLayout]="direction">
         <div fcFlex="22%">Two One</div>
         <div fcFlex="205px">Two Two</div>
-        <div fcFlex="30">Two Theee</div>
+        <div fcFlex="30">Two Three</div>
       </div>
 
       <div fcFlex>Three</div>
