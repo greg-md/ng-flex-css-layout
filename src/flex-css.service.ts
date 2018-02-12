@@ -342,7 +342,7 @@ export class FlexCssService {
   addFlexFill() {
     const className = generateFlexFillClassName();
 
-    if (!this.hasInFillStorage(className, 'none')) {
+    if (!this.hasInFillStorage(className, 'all')) {
       const style = {
         'margin': 0,
         'width': '100%',
@@ -351,7 +351,7 @@ export class FlexCssService {
         'min-height': '100%',
       };
 
-      this.addToFillStorage(className, style, 'none');
+      this.addToFillStorage(className, style, 'all');
     }
 
     return className;
@@ -409,7 +409,7 @@ export class FlexCssService {
   }
 
   private reorderTextElements(styleElement: FlexCssStyleElement) {
-    let position = this.reorderBreakpointElements(styleElement, 'none');
+    let position = this.reorderBreakpointElements(styleElement, 'all');
 
     this.breakpoints.forEach(breakpoint => {
       position = this.reorderBreakpointElements(styleElement, breakpoint.alias, position);
@@ -455,7 +455,7 @@ export class FlexCssService {
   }
 
   private addBreakpoints(breakpointsAliases: string[], css: string) {
-    breakpointsAliases = breakpointsAliases.filter(breakpoint => breakpoint !== 'none');
+    breakpointsAliases = breakpointsAliases.filter(breakpoint => breakpoint !== 'all');
 
     if (!breakpointsAliases.length) {
       return css;

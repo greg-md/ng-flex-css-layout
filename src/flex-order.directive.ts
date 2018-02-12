@@ -20,7 +20,7 @@ export class FlexOrderDirective extends BaseDirective implements OnInit, OnChang
 
   private layout: LayoutDirective;
 
-  @Input('fcFlexOrder')       set order(val)     { this.fcValues['none'] = val; }
+  @Input('fcFlexOrder')       set order(val)     { this.fcValues['all'] = val; }
   @Input('fcFlexOrder.xs')    set orderXs(val)   { this.fcValues['xs'] = val; }
   @Input('fcFlexOrder.sm')    set orderSm(val)   { this.fcValues['sm'] = val; }
   @Input('fcFlexOrder.md')    set orderMd(val)   { this.fcValues['md'] = val; }

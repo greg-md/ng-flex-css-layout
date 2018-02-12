@@ -17,8 +17,8 @@ export class LayoutDirective extends BaseDirective implements OnChanges {
 
   readonly observer$ = new ReplaySubject(1);
 
-  @Input('fcLayout')        set layout(val)     { this.fcValues['none'] = val; }
-                            // get layout()        { return this.fcValues['none']; }
+  @Input('fcLayout')        set layout(val)     { this.fcValues['all'] = val; }
+                            // get layout()        { return this.fcValues['all']; }
 
   @Input('fcLayout.xs')     set layoutXs(val)   { this.fcValues['xs'] = val; }
   @Input('fcLayout.sm')     set layoutSm(val)   { this.fcValues['sm'] = val; }
@@ -63,6 +63,8 @@ export class LayoutDirective extends BaseDirective implements OnChanges {
   addNewBreakpoints(breakpoints: string[], defaultValue?) {
     breakpoints.forEach(breakpoint => {
       if (!this.fcValues[breakpoint]) {
+        console.log('layout add breakpoint', breakpoint, defaultValue);
+
         this.fcValues[breakpoint] = defaultValue;
       }
     });

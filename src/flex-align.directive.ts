@@ -20,7 +20,7 @@ export class FlexAlignDirective extends BaseDirective implements OnInit, OnChang
 
   private layout: LayoutDirective;
 
-  @Input('fcFlexAlign')       set align(val)     { this.fcValues['none'] = val; }
+  @Input('fcFlexAlign')       set align(val)     { this.fcValues['all'] = val; }
   @Input('fcFlexAlign.xs')    set alignXs(val)   { this.fcValues['xs'] = val; }
   @Input('fcFlexAlign.sm')    set alignSm(val)   { this.fcValues['sm'] = val; }
   @Input('fcFlexAlign.md')    set alignMd(val)   { this.fcValues['md'] = val; }

@@ -18,7 +18,7 @@ export class LayoutGapDirective extends BaseDirective implements OnInit, OnChang
 
   observer$ = new ReplaySubject(1);
 
-  @Input('fcLayoutGap')       set gap(val) { this.fcValues['none'] = val; }
+  @Input('fcLayoutGap')       set gap(val) { this.fcValues['all'] = val; }
   @Input('fcLayoutGap.xs')    set gapXs(val) { this.fcValues['xs'] = val; }
   @Input('fcLayoutGap.sm')    set gapSm(val) { this.fcValues['sm'] = val; }
   @Input('fcLayoutGap.md')    set gapMd(val) { this.fcValues['md'] = val; }
@@ -79,7 +79,7 @@ export class LayoutGapDirective extends BaseDirective implements OnInit, OnChang
   }
 
   get layoutValues() {
-    return this.layout ? this.layout.fcValues : { none: '' };
+    return this.layout ? this.layout.fcValues : { 'all': '' };
   }
 
   get breakpoints() {

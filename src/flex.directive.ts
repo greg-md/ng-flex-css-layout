@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit, Input, Renderer2, Optional, Host, OnChanges } from '@angular/core';
+import { Directive, ElementRef, OnInit, Input, Renderer2, Optional, Host, OnChanges, SkipSelf } from '@angular/core';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 import { FlexCssService } from './flex-css.service';
@@ -23,7 +23,7 @@ export class FlexDirective extends BaseDirective implements OnInit, OnChanges {
   @Input() fcShrink = 1;
   @Input() fcGrow = 1;
 
-  @Input('fcFlex')       set flex(val)     { this.fcValues['none'] = val; }
+  @Input('fcFlex')       set flex(val)     { this.fcValues['all'] = val; }
   @Input('fcFlex.xs')    set flexXs(val)   { this.fcValues['xs'] = val; }
   @Input('fcFlex.sm')    set flexSm(val)   { this.fcValues['sm'] = val; }
   @Input('fcFlex.md')    set flexMd(val)   { this.fcValues['md'] = val; }
@@ -44,7 +44,7 @@ export class FlexDirective extends BaseDirective implements OnInit, OnChanges {
     elementRef: ElementRef,
     renderer: Renderer2,
     private service: FlexCssService,
-    @Optional() @Host() layout: LayoutDirective,
+    @Optional() @Host() @SkipSelf() layout: LayoutDirective,
   ) {
     super(elementRef, renderer);
 
@@ -90,7 +90,7 @@ export class FlexDirective extends BaseDirective implements OnInit, OnChanges {
   }
 
   get layoutValues() {
-    return this.layout ? this.layout.fcValues : { none: '' };
+    return this.layout ? this.layout.fcValues : { 'all': '' };
   }
 
   get parentElement() {

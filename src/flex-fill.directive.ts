@@ -34,9 +34,9 @@ export class FlexFillDirective extends BaseDirective implements OnInit {
 
   dependsOnParentLayout() {
     if (this.layout) {
-      this.layout.addNewBreakpoints(['none'], 'row');
+      this.layout.addNewBreakpoints(['all'], 'row');
     } else {
-      this.renderer.addClass(this.parentElement, this.service.addLayout('row', 'none'));
+      this.renderer.addClass(this.parentElement, this.service.addLayout('row', 'all'));
     }
   }
 

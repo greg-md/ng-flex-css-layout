@@ -20,7 +20,7 @@ export class FlexOffsetDirective extends BaseDirective implements OnInit, OnChan
 
   private layout: LayoutDirective;
 
-  @Input('fcFlexOffset')       set offset(val)     { this.fcValues['none'] = val; }
+  @Input('fcFlexOffset')       set offset(val)     { this.fcValues['all'] = val; }
   @Input('fcFlexOffset.xs')    set offsetXs(val)   { this.fcValues['xs'] = val; }
   @Input('fcFlexOffset.sm')    set offsetSm(val)   { this.fcValues['sm'] = val; }
   @Input('fcFlexOffset.md')    set offsetMd(val)   { this.fcValues['md'] = val; }
@@ -89,7 +89,7 @@ export class FlexOffsetDirective extends BaseDirective implements OnInit, OnChan
   }
 
   get layoutValues() {
-    return this.layout ? this.layout.fcValues : { none: '' };
+    return this.layout ? this.layout.fcValues : { 'all': '' };
   }
 
   get breakpoints() {

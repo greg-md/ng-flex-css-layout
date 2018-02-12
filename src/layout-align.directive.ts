@@ -18,7 +18,7 @@ export class LayoutAlignDirective extends BaseDirective implements OnInit, OnCha
 
   observer$ = new ReplaySubject(1);
 
-  @Input('fcLayoutAlign')       set align(val)     { this.fcValues['none'] = val; }
+  @Input('fcLayoutAlign')       set align(val)     { this.fcValues['all'] = val; }
   @Input('fcLayoutAlign.xs')    set alignXs(val)   { this.fcValues['xs'] = val; }
   @Input('fcLayoutAlign.sm')    set alignSm(val)   { this.fcValues['sm'] = val; }
   @Input('fcLayoutAlign.md')    set alignMd(val)   { this.fcValues['md'] = val; }
@@ -79,7 +79,7 @@ export class LayoutAlignDirective extends BaseDirective implements OnInit, OnCha
   }
 
   get layoutValues() {
-    return this.layout ? this.layout.fcValues : { none: '' };
+    return this.layout ? this.layout.fcValues : { 'all': '' };
   }
 
   get breakpoints() {
