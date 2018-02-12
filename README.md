@@ -5,7 +5,7 @@
 
 **Flex-CSS-Layout** is an alternative behaviour of [Flex-Layout](https://github.com/angular/flex-layout) directives,
 that will still work with Angular Universal and App Shell.
-It is not meant to replace [Flex-Layout](https://github.com/angular/flex-layout). You can freely use both modules on your needs.
+It is not meant to replace Flex-Layout. You can freely use both modules on your needs.
 
 The Flex-CSS-Layout engine intelligently generates internal style sheets(inside of `<style>` tags) rather than inline styles
 and leaves the CSS Media queries to be responsible of the layout.
@@ -27,7 +27,7 @@ $ npm install @greg-md/ng-flex-css-layout --save
 
 # How It Works
 
-Please read [Flex-Layout](https://github.com/angular/flex-layout/wiki) documentation first.
+Please read [Flex-Layout wiki](https://github.com/angular/flex-layout/wiki) first.
 
 To take advantage of Flex-CSS-Layout features, you will have to change the prefix of Flex-Layout directives
 from `fx` to `fc`(which is **F**lex**C**ss).
