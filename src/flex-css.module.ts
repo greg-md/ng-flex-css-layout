@@ -11,8 +11,14 @@ import { FlexOffsetDirective } from './flex-offset.directive';
 import { FlexAlignDirective } from './flex-align.directive';
 import { FlexFillDirective } from './flex-fill.directive';
 
-export interface BreakpointsFn {
-  (defaultBreakpoints: Breakpoint[]): Breakpoint[];
+export type BreakpointsFn = (defaultBreakpoints: Breakpoint[]) => Breakpoint[];
+
+export function customizeBreakPoints(breakpoints: Breakpoint[]|BreakpointsFn) {
+  if (typeof breakpoints === 'function') {
+    breakpoints = breakpoints(FLEX_CSS_DEFAULT_BREAKPOINTS);
+  }
+
+  return breakpoints || FLEX_CSS_DEFAULT_BREAKPOINTS;
 }
 
 @NgModule({
@@ -41,17 +47,18 @@ export interface BreakpointsFn {
 })
 export class FlexCssModule {
   static forRoot(breakpoints?: Breakpoint[]|BreakpointsFn): ModuleWithProviders {
-    if (typeof breakpoints === "function") {
-      breakpoints = breakpoints(FLEX_CSS_DEFAULT_BREAKPOINTS);
-    }
-
     return {
       ngModule: FlexCssModule,
       providers: [
         FlexCssService,
         {
+          provide: 'flex_css_module_breakpoints',
+          useValue: breakpoints,
+        },
+        {
           provide: FLEX_CSS_BREAKPOINTS,
-          useValue: breakpoints || FLEX_CSS_DEFAULT_BREAKPOINTS,
+          useFactory: customizeBreakPoints,
+          deps: ['flex_css_module_breakpoints']
         },
       ],
     };

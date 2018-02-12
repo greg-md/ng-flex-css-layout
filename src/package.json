@@ -1,6 +1,6 @@
 {
   "name": "@greg-md/ng-flex-css-layout",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "Flex-CSS-Layout is an alternative behaviour of Flex-Layout directives, that will still work with Angular Universal and App Shell.",
   "repository": {
     "type": "git",
