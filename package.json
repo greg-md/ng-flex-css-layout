@@ -1,7 +1,7 @@
 {
   "name": "@greg-md/ng-flex-css-layout",
   "version": "1.0.0-beta.1",
-  "description": "Extends Angular Flex-Layout to support SSR.",
+  "description": "Flex-CSS-Layout is an alternative behaviour of Flex-Layout directives, that will still work with Angular Universal and App Shell.",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -24,7 +24,17 @@
     "email": "contact@greg.md"
   },
   "keywords": [
-    "angular"
+    "greg-md",
+    "greg-js",
+    "ng-flex-css-layout",
+    "flex-css-layout",
+    "responsive",
+    "javascript",
+    "typescript",
+    "angular",
+    "ng",
+    "js",
+    "ts"
   ],
   "license": "MIT",
   "bugs": {
