@@ -32,7 +32,7 @@ Please read [Flex-Layout](https://github.com/angular/flex-layout/wiki) documenta
 To take advantage of Flex-CSS-Layout features, you will have to change the prefix of Flex-Layout directives
 from `fx` to `fc`(which is **F**lex**C**ss).
 
-Flex-CSS-Layout currently supported directives:
+Flex-CSS-Layout currently supported directives(including [Responsive API](https://github.com/angular/flex-layout/wiki/Responsive-API)):
 
 | Flex-Layout  | Flex-CSS-Layout |
 | ------------- | ------------- |
