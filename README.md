@@ -18,7 +18,7 @@ and leaves the CSS Media queries to be responsible of the layout.
 * [License](#license)
 * [Huuuge Quote](#huuuge-quote)
 
-## Installation
+# Installation
 
 To install this library, run:
 
