@@ -14,6 +14,7 @@ and leaves the CSS Media queries to be responsible of the layout.
 
 * [Installation](#installation)
 * [How It Works](#how-it-works)
+* [Breakpoints Priorities](#breakpoints-priorities)
 * [License](#license)
 * [Huuuge Quote](#huuuge-quote)
 
@@ -44,8 +45,13 @@ Flex-CSS-Layout currently supported directives(including [Responsive API](https:
 | fxFlexOffset | fcFlexOffset |
 | fxFlexAlign | fcFlexAlign |
 | fxFlexFill | fcFlexFill |
+| fxShow | fcShow + fcDisplayDefault |
+| fxHide | fcHide + fcDisplayDefault |
 
-> **Note**: In some specific cases `fc*` directives may have different results then `fx*` directives.
+> **Note**: In some specific cases `fc*` directives may have different results then `fx*` directives. See [Breakpoints Priorities](#breakpoints-priorities).
+
+> A new attribute `fcDisplayDefault` was provided for `fcShow` and `fcHide` directives,
+  that will apply when no `display` style could be found for the element. Useful for SSR.
 
 ## Setting up in a module
 
@@ -87,6 +93,44 @@ export class AppModule { }
 
   <div fcFlex>Three</div>
 </div>
+```
+
+# Breakpoints Priorities
+
+By default, higher priority have breakpoints that applies on higher screens.
+That being said, `lg` related breakpoints(`lt-xl`, `lg`, `gt-lg`) have higher priority then `md` breakpoints(`lt-lg`, `md`, `gt-md`).
+
+Full list from lower to higher priority:
+
+```typescript
+export const FLEX_CSS_DEFAULT_BREAKPOINTS: Breakpoint[] = [
+  { alias: 'lt-sm', media: ['screen', '(max-width: 599px)'] },
+  { alias: 'xs',    media: ['screen', '(max-width: 599px)'] },
+  { alias: 'gt-xs', media: ['screen', '(min-width: 600px)'] },
+
+  { alias: 'lt-md', media: ['screen', '(max-width: 959px)'] },
+  { alias: 'sm',    media: ['screen', '(min-width: 600px)', '(max-width: 959px)'] },
+  { alias: 'gt-sm', media: ['screen', '(min-width: 960px)'] },
+
+  { alias: 'lt-lg', media: ['screen', '(max-width: 1279px)'] },
+  { alias: 'md',    media: ['screen', '(min-width: 960px)', '(max-width: 1279px)'] },
+  { alias: 'gt-md', media: ['screen', '(min-width: 1280px)'] },
+
+  { alias: 'lt-xl', media: ['screen', '(max-width: 1919px)'] },
+  { alias: 'lg',    media: ['screen', '(min-width: 1280px)', '(max-width: 1919px)'] },
+  { alias: 'gt-lg', media: ['screen', '(min-width: 1920px)'] },
+
+  { alias: 'xl',    media: ['screen', '(min-width: 1920px)', '(max-width: 5000px)'] },
+];
+```
+
+If you want to reverse the priority, or change it as you want, you can redefine it in the module instantiation:
+
+```typescript
+// Define new breakpoints directly.
+FlexCssModule.forRoot(FLEX_CSS_DEFAULT_BREAKPOINTS.reverse());
+// Or, provide a callable.
+FlexCssModule.forRoot(breakpoints => breakpoints.reverse());
 ```
 
 # License

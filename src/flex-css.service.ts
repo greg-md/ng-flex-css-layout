@@ -6,7 +6,7 @@ import { validateValue, buildCSS, isFlowHorizontal } from './layout-validator';
 import {
   generateLayoutClassName, normalizeLayoutAlignValue, generateLayoutAlignClassName,
   generateLayoutGapClassName, generateFlexClassName, generateFlexOrderClassName, generateFlexOffsetClassName,
-  generateFlexAlignClassName, generateFlexFillClassName
+  generateFlexAlignClassName, generateFlexFillClassName, generateFlexShowHideClassName
 } from './helpers';
 import { validateBasis } from './basis-validator';
 
@@ -352,6 +352,20 @@ export class FlexCssService {
       };
 
       this.addToFillStorage(className, style, 'all');
+    }
+
+    return className;
+  }
+
+  addShowHide(display: string, show: boolean, breakpoint: string) {
+    const className = generateFlexShowHideClassName(display, show, breakpoint);
+
+    if (!this.hasInFillStorage(className, breakpoint)) {
+      const style = {
+        'display': show ? display || 'block' : 'none',
+      };
+
+      this.addToFillStorage(className, style, breakpoint);
     }
 
     return className;

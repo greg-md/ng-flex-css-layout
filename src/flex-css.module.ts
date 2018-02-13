@@ -10,6 +10,7 @@ import { FlexOrderDirective } from './flex-order.directive';
 import { FlexOffsetDirective } from './flex-offset.directive';
 import { FlexAlignDirective } from './flex-align.directive';
 import { FlexFillDirective } from './flex-fill.directive';
+import { ShowHideDirective } from './show-hide.directive';
 
 export type BreakpointsFn = (defaultBreakpoints: Breakpoint[]) => Breakpoint[];
 
@@ -31,7 +32,9 @@ export function customizeBreakPoints(breakpoints: Breakpoint[]|BreakpointsFn) {
     FlexOrderDirective,
     FlexOffsetDirective,
     FlexAlignDirective,
+
     FlexFillDirective,
+    ShowHideDirective,
   ],
   exports: [
     LayoutDirective,
@@ -42,7 +45,9 @@ export function customizeBreakPoints(breakpoints: Breakpoint[]|BreakpointsFn) {
     FlexOrderDirective,
     FlexOffsetDirective,
     FlexAlignDirective,
+
     FlexFillDirective,
+    ShowHideDirective,
   ],
 })
 export class FlexCssModule {

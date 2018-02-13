@@ -88,6 +88,13 @@ export function generateFlexFillClassName() {
   return 'fcFlexFill';
 }
 
+export function generateFlexShowHideClassName(display, show: boolean, breakpoint: string) {
+  return 'fcShow'
+    + (breakpoint !== 'all' ? '--' + breakpoint : '')
+    + '--' + valueToClassName(display)
+    + '--' + (show ? 'show' : 'hide');
+}
+
 export function valueToClassName(value) {
   return String(value)
     .replace('%', 'p')

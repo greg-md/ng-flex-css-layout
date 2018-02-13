@@ -22,6 +22,10 @@ import { FlexCssModule }  from '@greg-md/ng-flex-css-layout';
 
       <div fcFlex>Three</div>
     </div>
+
+    <div fcHide [fcShow.gt-sm]="true">
+      fcHide [fcShow.gt-sm]="true"
+    </div>
   `
 })
 class AppComponent {
