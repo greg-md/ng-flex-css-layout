@@ -48,7 +48,7 @@ Flex-CSS-Layout currently supported directives(including [Responsive API](https:
 | fxShow | fcShow + fcDisplayDefault |
 | fxHide | fcHide + fcDisplayDefault |
 
-> **Note**: In some specific cases `fc*` directives may have different results then `fx*` directives. See [Breakpoints Priorities](#breakpoints-priorities).
+> **Note**: In some specific cases `fc*` directives may have different results than `fx*` directives. See [Breakpoints Priorities](#breakpoints-priorities).
 
 > A new attribute `fcDisplayDefault` was provided for `fcShow` and `fcHide` directives,
   that will apply when no `display` style could be found for the element. Useful for SSR.
