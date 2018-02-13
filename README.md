@@ -98,7 +98,7 @@ export class AppModule { }
 # Breakpoints Priorities
 
 By default, higher priority have breakpoints that applies on higher screens.
-That being said, `lg` related breakpoints(`lt-xl`, `lg`, `gt-lg`) have higher priority then `md` breakpoints(`lt-lg`, `md`, `gt-md`).
+That being said, `lg` related breakpoints(`lt-xl`, `lg`, `gt-lg`) have higher priority than `md` breakpoints(`lt-lg`, `md`, `gt-md`).
 
 Full list from lower to higher priority:
 
