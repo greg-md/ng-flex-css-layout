@@ -97,7 +97,7 @@ export class AppModule { }
 
 # Breakpoints Priorities
 
-By default, breakpoints with smaller range have higher priority. See the next schema:
+By default, breakpoints with smaller range and that applies on smaller screens have higher priority. See the next schema:
 
 ![Breakpoints Priorities](Breakpoints%20Priorities.jpg)
 
