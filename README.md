@@ -97,30 +97,27 @@ export class AppModule { }
 
 # Breakpoints Priorities
 
-By default, higher priority have breakpoints that applies on higher screens.
-That being said, `lg` related breakpoints(`lt-xl`, `lg`, `gt-lg`) have higher priority than `md` breakpoints(`lt-lg`, `md`, `gt-md`).
+By default, breakpoints with smaller range have higher priority. See the next schema:
 
-Full list from lower to higher priority:
+![Breakpoints Priorities](Breakpoints%20Priorities.jpg)
+
+How this looks in the code:
 
 ```typescript
 export const FLEX_CSS_DEFAULT_BREAKPOINTS: Breakpoint[] = [
-  { alias: 'lt-sm', media: ['screen', '(max-width: 599px)'] },
-  { alias: 'xs',    media: ['screen', '(max-width: 599px)'] },
   { alias: 'gt-xs', media: ['screen', '(min-width: 600px)'] },
-
-  { alias: 'lt-md', media: ['screen', '(max-width: 959px)'] },
-  { alias: 'sm',    media: ['screen', '(min-width: 600px)', '(max-width: 959px)'] },
-  { alias: 'gt-sm', media: ['screen', '(min-width: 960px)'] },
-
-  { alias: 'lt-lg', media: ['screen', '(max-width: 1279px)'] },
-  { alias: 'md',    media: ['screen', '(min-width: 960px)', '(max-width: 1279px)'] },
-  { alias: 'gt-md', media: ['screen', '(min-width: 1280px)'] },
-
   { alias: 'lt-xl', media: ['screen', '(max-width: 1919px)'] },
-  { alias: 'lg',    media: ['screen', '(min-width: 1280px)', '(max-width: 1919px)'] },
+  { alias: 'gt-sm', media: ['screen', '(min-width: 960px)'] },
+  { alias: 'lt-lg', media: ['screen', '(max-width: 1279px)'] },
+  { alias: 'gt-md', media: ['screen', '(min-width: 1280px)'] },
+  { alias: 'lt-md', media: ['screen', '(max-width: 959px)'] },
   { alias: 'gt-lg', media: ['screen', '(min-width: 1920px)'] },
-
+  { alias: 'lt-sm', media: ['screen', '(max-width: 599px)'] },
   { alias: 'xl',    media: ['screen', '(min-width: 1920px)', '(max-width: 5000px)'] },
+  { alias: 'lg',    media: ['screen', '(min-width: 1280px)', '(max-width: 1919px)'] },
+  { alias: 'md',    media: ['screen', '(min-width: 960px)', '(max-width: 1279px)'] },
+  { alias: 'sm',    media: ['screen', '(min-width: 600px)', '(max-width: 959px)'] },
+  { alias: 'xs',    media: ['screen', '(max-width: 599px)'] },
 ];
 ```
 

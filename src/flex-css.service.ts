@@ -16,6 +16,22 @@ export interface Breakpoint {
 }
 
 export const FLEX_CSS_DEFAULT_BREAKPOINTS: Breakpoint[] = [
+  { alias: 'gt-xs', media: ['screen', '(min-width: 600px)'] },
+  { alias: 'lt-xl', media: ['screen', '(max-width: 1919px)'] },
+  { alias: 'gt-sm', media: ['screen', '(min-width: 960px)'] },
+  { alias: 'lt-lg', media: ['screen', '(max-width: 1279px)'] },
+  { alias: 'gt-md', media: ['screen', '(min-width: 1280px)'] },
+  { alias: 'lt-md', media: ['screen', '(max-width: 959px)'] },
+  { alias: 'gt-lg', media: ['screen', '(min-width: 1920px)'] },
+  { alias: 'lt-sm', media: ['screen', '(max-width: 599px)'] },
+  { alias: 'xl',    media: ['screen', '(min-width: 1920px)', '(max-width: 5000px)'] },
+  { alias: 'lg',    media: ['screen', '(min-width: 1280px)', '(max-width: 1919px)'] },
+  { alias: 'md',    media: ['screen', '(min-width: 960px)', '(max-width: 1279px)'] },
+  { alias: 'sm',    media: ['screen', '(min-width: 600px)', '(max-width: 959px)'] },
+  { alias: 'xs',    media: ['screen', '(max-width: 599px)'] },
+];
+
+export const FLEX_CSS_BREAKPOINTS_SMALL_TO_LARGE: Breakpoint[] = [
   { alias: 'lt-sm', media: ['screen', '(max-width: 599px)'] },
   { alias: 'xs',    media: ['screen', '(max-width: 599px)'] },
   { alias: 'gt-xs', media: ['screen', '(min-width: 600px)'] },
