@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit, Input, Renderer2, Optional, Host, OnChanges } from '@angular/core';
+import { Directive, ElementRef, OnInit, Input, Renderer2, Optional, Host, OnChanges, SkipSelf } from '@angular/core';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 import { FlexCssService } from './flex-css.service';
@@ -41,7 +41,7 @@ export class FlexOffsetDirective extends BaseDirective implements OnInit, OnChan
     elementRef: ElementRef,
     renderer: Renderer2,
     private service: FlexCssService,
-    @Optional() @Host() layout: LayoutDirective,
+    @Optional() @Host() @SkipSelf() layout: LayoutDirective,
   ) {
     super(elementRef, renderer);
 

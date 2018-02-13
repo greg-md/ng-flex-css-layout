@@ -96,7 +96,5 @@ export function generateFlexShowHideClassName(display, show: boolean, breakpoint
 }
 
 export function valueToClassName(value) {
-  return String(value)
-    .replace('%', 'p')
-    .replace(' ', '');
+  return String(value).replace(/[^a-zA-Z0-9-]/, '-');
 }
