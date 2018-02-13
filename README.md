@@ -128,9 +128,9 @@ If you want to reverse the priority, or change it as you want, you can redefine 
 
 ```typescript
 // Define new breakpoints directly.
-FlexCssModule.forRoot(FLEX_CSS_DEFAULT_BREAKPOINTS.reverse());
+FlexCssModule.forRoot([].concat(FLEX_CSS_DEFAULT_BREAKPOINTS).reverse());
 // Or, provide a callable.
-FlexCssModule.forRoot(breakpoints => breakpoints.reverse());
+FlexCssModule.forRoot(breakpoints => [].concat(breakpoints).reverse());
 ```
 
 # License
