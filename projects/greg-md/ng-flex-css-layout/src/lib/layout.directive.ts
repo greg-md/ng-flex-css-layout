@@ -63,8 +63,6 @@ export class LayoutDirective extends BaseDirective implements OnChanges {
   addNewBreakpoints(breakpoints: string[], defaultValue?) {
     breakpoints.forEach(breakpoint => {
       if (!this.fcValues[breakpoint]) {
-        console.log('layout add breakpoint', breakpoint, defaultValue);
-
         this.fcValues[breakpoint] = defaultValue;
       }
     });

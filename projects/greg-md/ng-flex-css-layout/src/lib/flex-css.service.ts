@@ -231,10 +231,10 @@ export class FlexCssService {
         style['flex'] = `0 0 auto`;
         break;
       default:
-        const hasCalc = String(theBasis).indexOf('calc') > -1;
-        const isPercent = String(theBasis).indexOf('%') > -1 && !hasCalc;
+        const isCalc = String(theBasis).indexOf('calc') > -1;
+        const isPercent = !isCalc && String(theBasis).indexOf('%') > -1;
 
-        const isValue = hasCalc ||
+        const isValue = isCalc || isPercent ||
           String(theBasis).indexOf('px') > -1 ||
           String(theBasis).indexOf('em') > -1 ||
           String(theBasis).indexOf('vw') > -1 ||
@@ -251,7 +251,7 @@ export class FlexCssService {
 
         style['flex-grow'] = `${theGrow}`;
         style['flex-shrink'] = `${theShrink}`;
-        style['flex-basis'] = isValue ? `${theBasis}` : '100%';
+        style['flex-basis'] = style['min-width'] = style['max-width'] = isValue ? `${theBasis}` : '100%';
         break;
     }
 
